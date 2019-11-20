@@ -5,3 +5,5 @@ import 'core-js/stable'
 // uses the style-loader
 import 'normalize.css'
 import './global-styles.sass'
+
+// this is the entry point of your application!
