@@ -3,6 +3,7 @@
   "rules": {
     "arrow-return-shorthand": true,
     "curly": false,
+    "arrow-parens": false,
     "prefer-readonly": true,
     "trailing-comma": [
       true,

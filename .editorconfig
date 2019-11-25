@@ -1,3 +1,7 @@
+# This is the text editor configuration.
+# This is supported natively or via plugin by most text editors/IDEs.
+# More information: https://editorconfig.org/
+
 root = true
 
 [*]
