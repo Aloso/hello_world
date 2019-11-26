@@ -7,7 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
-  
+
   const hotCssLoader = isProd ? null : 'css-hot-loader';
   const miniCssLoader = MiniCssExtractPlugin.loader;
   const postCssLoader = isProd ? {
