@@ -65,3 +65,24 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
   - You need to insert your app's info.
   - You can set a background and theme color, and make various customizations.
   - You can generate favicons in different sizes [here](https://realfavicongenerator.net/).
+
+## Add React
+
+If you want to use this template for React, that's pretty easy:
+
+1. Go to `.tsconfig` and add `"jsx": "react"` to the compilerOptions.
+2. Install some dependencies:
+   ```bash
+   npm install --save react react-dom
+   npm install --save-dev @types/react @types/react-dom react-hot-loader
+   ```
+3. Rename `index.ts` to `index.tsx` and change the `entry` in `webpack.config.js` accordingly
+4. Insert the following at the end of `index.tsx`, to test it and enable hot reloading:
+   ```tsx
+   import * as React from 'react'
+   import * as ReactDOM from 'react-dom'
+
+   ReactDOM.render(<div>Hello react!</div>, document.body)
+
+   if (module.hot) module.hot.accept()
+   ```
