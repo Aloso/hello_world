@@ -4,6 +4,7 @@
     "arrow-return-shorthand": true,
     "curly": false,
     "arrow-parens": false,
+    "interface-name": false,
     "prefer-readonly": true,
     "trailing-comma": [
       true,
