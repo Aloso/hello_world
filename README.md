@@ -1,17 +1,18 @@
-# ts-template
-A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sass-lang.com) web app, with [babel](https://babeljs.io) and [normalize.css](https://necolas.github.io/normalize.css)
+# hello_world
+A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sass-lang.com) web app, with polyfills and a CSS reset
 
 ## Highlights
 
-- Webpack 4, Typescript, TSLint, Sass, Babel-polyfill
+- Webpack 4, Typescript, TSLint, Sass
+- Polyfills ([core-js](https://github.com/zloirock/core-js), [regenerator-runtime](https://github.com/facebook/regenerator/tree/master/packages/regenerator-runtime)) and a CSS reset ([normalize.css](https://necolas.github.io/normalize.css/))
 - [Hot reloading](https://webpack.js.org/concepts/hot-module-replacement) of stylesheets and selected TypeScript modules
 - Source maps, css extraction
-- Code minification in production mode: The script, including all polyfills weighs only 100 KiB (40 KiB gzipped).
+- Code minification in production mode
 
 ## Get started!
 
-1. Clone the repo: `git clone https://github.com/Aloso/ts-template.git YOUR_APP_NAME`
-2. Run `npm install`
+1. Clone the repo: `git clone https://github.com/Aloso/hello_world.git YOUR_APP_NAME`
+2. Run `npm install` (you can ignore warnings for `sass-loader` and `fsevents`)
 3. Replace the metadata in `package.json`
 4. Insert your name and the current year in `LICENSE` after "Copyright (c)"
 5. Search for comments starting with `TODO:`, here you probably have to do something
@@ -49,9 +50,8 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
     - Run development server in production mode: `npm run serve` (not recommended)
 
 - `index.ts` contains
-  - Global import for babel polyfills
+  - Global imports for polyfills
   - Stylesheets `normalize.css` and `global-styles.sass`
-    - These are extracted to a CSS file during the build process
 
 - `index.html` contains
   - Charset, language, viewport

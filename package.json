@@ -1,6 +1,6 @@
 {
   "name": "hello_world",
-  "description": "A template for a ts/sass web app, with core-js and normalize.css",
+  "description": "A template for a ts/sass web app, with polyfills and normalize.css",
   "keywords": [
     "hello_world"
   ],
