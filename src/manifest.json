@@ -1,5 +1,3 @@
-// TODO: Insert the page metadata,  https://developers.google.com/web/fundamentals/web-app-manifest
-// The icons can be generated on  https://realfavicongenerator.net/
 {
   "name": "Hello world!",
   "short_name": "Hello world",

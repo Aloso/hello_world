@@ -54,6 +54,11 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
   - Comment linking to a professional favicon generator
   - Webpack script and stylesheet bundles
 
+- `manifest.json` is a [web app manifest](https://developers.google.com/web/fundamentals/web-app-manifest).
+  - You need to insert your app's info.
+  - You can set a background and theme color, and make various customizations.
+  - You can generate favicons in different sizes [here](https://realfavicongenerator.net/).
+
 - `.babelrc`
   - Babel configuration file
   - Supports TypeScript with dynamic imports
