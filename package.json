@@ -9,11 +9,11 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "watch": "webpack --mode development --watch",
-    "build": "webpack --mode development",
-    "start": "webpack-dev-server --mode development",
-    "prod": "webpack --mode production",
-    "serve": "webpack-dev-server --mode production"
+    "watch": "./node_modules/webpack/bin/webpack.js --mode development --watch",
+    "build": "./node_modules/webpack/bin/webpack.js --mode development",
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development",
+    "prod": "./node_modules/webpack/bin/webpack.js --mode production",
+    "serve": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode production"
   },
   "dependencies": {
     "core-js": "^3.4.3",
@@ -39,6 +39,7 @@
     "typescript": "^3.7.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.2"
   }
 }
