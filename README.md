@@ -11,7 +11,7 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
 
 ## Get started!
 
-1. Clone the repo: `git clone https://github.com/Aloso/hello_world.git YOUR_APP_NAME`
+1. Click the green **Use this template** button at the top, choose a name and clone it.
 2. Run `npm install` (you can ignore warnings for `sass-loader` and `fsevents`)
 3. Replace the metadata in `package.json`
 4. Insert your name and the current year in `LICENSE` after "Copyright (c)"
