@@ -38,10 +38,8 @@ module.exports = (env, argv) => {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new CopyPlugin([
-        {
-          from: './src/index.html',
-          to: './index.html',
-        },
+        { from: './src/index.html', to: './index.html' },
+        { from: './src/manifest.json', to: './manifest.json' },
       ]),
       new MiniCssExtractPlugin({
         filename: '[name].css',

@@ -6,7 +6,7 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
 1. Clone the repo: `git clone https://github.com/Aloso/ts-template.git YOUR_APP_NAME`
 2. Run `npm install`
 3. Replace the metadata in `package.json`
-4. Insert your name in `LICENSE` after "Copyright (c) 2019". Maybe also update the year
+4. Insert your name and the current year in `LICENSE` after "Copyright (c)"
 5. Search for comments starting with `TODO:`, here you probably have to do something
 6. Start the development server with `npm start`
 7. Start coding!
