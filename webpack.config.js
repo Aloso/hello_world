@@ -14,27 +14,27 @@ module.exports = (env, argv) => {
     mode: isProd ? 'production' : 'development',
     devtool: isProd ? 'source-map' : 'cheap-module-eval-source-map',
     stats: 'minimal',
-    
+
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
       compress: true,
       hot: true,
       port: 9000,
     },
-    
+
     entry: {
       main: './src/index.ts',
     },
-    
+
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
-    
+
     resolve: {
       extensions: ['.ts', '.js', '.css', '.scss', '.sass'],
     },
-    
+
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new CopyPlugin([
@@ -48,7 +48,7 @@ module.exports = (env, argv) => {
       }),
       new CleanWebpackPlugin(),
     ],
-    
+
     module: {
       rules: [
         {
@@ -79,7 +79,7 @@ module.exports = (env, argv) => {
         },
       ],
     },
-    
+
     optimization: isProd ? {
       minimizer: [
         new OptimizeCSSAssetsPlugin({}),
