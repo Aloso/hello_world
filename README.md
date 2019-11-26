@@ -1,6 +1,13 @@
 # ts-template
 A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sass-lang.com) web app, with [babel](https://babeljs.io) and [normalize.css](https://necolas.github.io/normalize.css)
 
+## Highlights
+
+- Webpack 4, Typescript, TSLint, Sass, Babel-polyfill
+- [Hot reloading](https://webpack.js.org/concepts/hot-module-replacement) of stylesheets and selected TypeScript modules
+- Source maps, css extraction
+- Code minification in production mode: The script, including all polyfills weighs only 100 KiB (40 KiB gzipped).
+
 ## Get started!
 
 1. Clone the repo: `git clone https://github.com/Aloso/ts-template.git YOUR_APP_NAME`
@@ -58,7 +65,3 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
   - You need to insert your app's info.
   - You can set a background and theme color, and make various customizations.
   - You can generate favicons in different sizes [here](https://realfavicongenerator.net/).
-
-- `.babelrc`
-  - Babel configuration file
-  - Supports TypeScript with dynamic imports

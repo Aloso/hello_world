@@ -4,15 +4,26 @@ const webpack = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
+  
+  const hotCssLoader = isProd ? null : 'css-hot-loader';
+  const miniCssLoader = MiniCssExtractPlugin.loader;
+  const postCssLoader = isProd ? {
+    loader: 'postcss-loader',
+    options: {
+      plugins: () => [
+        require('autoprefixer'),
+        require('cssnano')({ preset: 'default' }),
+      ],
+      sourceMap: true,
+    },
+  } : null;
 
   return {
     mode: isProd ? 'production' : 'development',
-    devtool: isProd ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: isProd ? 'source-map' : 'cheap-module-source-map',
     stats: 'minimal',
 
     devServer: {
@@ -32,7 +43,7 @@ module.exports = (env, argv) => {
     },
 
     resolve: {
-      extensions: ['.ts', '.js', '.css', '.scss', '.sass'],
+      extensions: ['.ts', '.tsx', '.js', '.css', '.scss', '.sass'],
     },
 
     plugins: [
@@ -51,38 +62,33 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.tsx?$/,
-          use: 'babel-loader',
+          use: 'ts-loader',
         },
         {
           test: /\.js$/,
           use: 'source-map-loader',
-          exclude: /node_modules/,
+          exclude: /\bnode_modules\b/,
         },
         {
           test: /\.s[ac]ss$/,
           use: [
-            'css-hot-loader',
-            MiniCssExtractPlugin.loader,
+            hotCssLoader,
+            miniCssLoader,
             'css-loader',
+            postCssLoader,
             'sass-loader',
-          ],
+          ].filter(loader => loader != null),
         },
         {
           test: /\.css$/,
           use: [
-            'css-hot-loader',
-            MiniCssExtractPlugin.loader,
+            hotCssLoader,
+            miniCssLoader,
             'css-loader',
-          ],
+            postCssLoader,
+          ].filter(loader => loader != null),
         },
       ],
     },
-
-    optimization: isProd ? {
-      minimizer: [
-        new OptimizeCSSAssetsPlugin({}),
-        new TerserPlugin(),
-      ]
-    } : undefined,
   };
 };

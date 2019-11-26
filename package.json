@@ -1,7 +1,9 @@
 {
   "name": "hello_world",
   "description": "A template for a ts/sass web app, with core-js and normalize.css",
-  "keywords": ["hello_world"],
+  "keywords": [
+    "hello_world"
+  ],
   "author": "Ludwig Stecher <ludwig.stecher@gmx.de>",
   "version": "1.0.0",
   "license": "MIT",
@@ -15,27 +17,24 @@
     "serve": "webpack-dev-server --mode production"
   },
   "dependencies": {
+    "core-js": "^3.4.3",
     "normalize.css": "^8.0.1",
-    "babel-polyfill": "^6.26.0"
+    "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-typescript": "^7.7.4",
     "@types/webpack-env": "^1.14.1",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "autoprefixer": "^9.7.2",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.5",
     "css-hot-loader": "^1.4.4",
     "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
-    "terser-webpack-plugin": "^2.2.1",
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2",
