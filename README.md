@@ -1,6 +1,16 @@
 # ts-template
 A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sass-lang.com) web app, with [babel](https://babeljs.io) and [normalize.css](https://necolas.github.io/normalize.css)
 
+## Get started!
+
+1. Clone the repo: `git clone https://github.com/Aloso/ts-template.git YOUR_APP_NAME`
+2. Run `npm install`
+3. Replace the metadata in `package.json`
+4. Insert your name in `LICENSE` after "Copyright (c) 2019". Maybe also update the year
+5. Search for comments starting with `TODO:`, here you probably have to do something
+6. Start the development server with `npm start`
+7. Start coding!
+
 ## Features
 
 - Typescript configuration with
@@ -47,13 +57,3 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
 - `.babelrc`
   - Babel configuration file
   - Supports TypeScript with dynamic imports
-
-## Get started!
-
-1. Clone the repo: `git clone https://github.com/Aloso/ts-template.git YOUR_APP_NAME`
-2. Run `npm install`
-3. Replace the metadata in `package.json`
-4. Insert your name in `LICENSE` after "Copyright (c) 2019". Maybe also update the year
-5. Search for comments starting with `TODO:`, here you probably have to do something
-6. Start the development server with `npm start`
-7. Start coding!
