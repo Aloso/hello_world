@@ -14,7 +14,7 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
 1. Click the green **Use this template** button at the top, choose a name and clone it.
 2. Run `npm install` (you can ignore warnings for `sass-loader` and `fsevents`)
 3. Replace the metadata in `package.json`
-4. Insert your name and the current year in `LICENSE` after "Copyright (c)"
+4. Insert the current year and your name in `LICENSE` after "Copyright (c)"
 5. Search for comments starting with `TODO:`, here you probably have to do something
 6. Start the development server with `npm start`
 7. Start coding!
