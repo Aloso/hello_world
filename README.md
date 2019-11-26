@@ -86,3 +86,15 @@ If you want to use this template for React, that's pretty easy:
 
    if (module.hot) module.hot.accept()
    ```
+
+## Add jQuery
+
+1. Add dependencies:
+   ```bash
+   npm install --save-dev @types/jquery
+   npm install --save jquery
+   ```
+2. Import:
+   ```ts
+   import $ from 'jquery'
+   ```
