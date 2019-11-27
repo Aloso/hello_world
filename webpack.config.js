@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -8,18 +10,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
 
-  const hotCssLoader = isProd ? null : 'css-hot-loader';
-  const miniCssLoader = MiniCssExtractPlugin.loader;
-  const postCssLoader = isProd ? {
-    loader: 'postcss-loader',
+  const cssLoader = {
+    loader: 'css-loader',
     options: {
-      plugins: () => [
-        require('autoprefixer'),
-        require('cssnano')({ preset: 'default' }),
-      ],
+      modules: true,
       sourceMap: true,
-    },
-  } : null;
+      importLoaders: 1,
+    }
+  };
 
   return {
     mode: isProd ? 'production' : 'development',
@@ -29,7 +27,7 @@ module.exports = (env, argv) => {
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
       compress: true,
-      hot: true,
+      hot: !isProd,
       port: 9000,
     },
 
@@ -49,13 +47,15 @@ module.exports = (env, argv) => {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new CopyPlugin([
-        { from: './src/index.html', to: './index.html' },
         { from: './src/manifest.json', to: './manifest.json' },
       ]),
       new MiniCssExtractPlugin({
         filename: '[name].css',
       }),
       new CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        template: 'src/index.html',
+      }),
     ],
 
     module: {
@@ -71,22 +71,15 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.s[ac]ss$/,
-          use: [
-            hotCssLoader,
-            miniCssLoader,
-            'css-loader',
-            postCssLoader,
-            'sass-loader',
-          ].filter(loader => loader != null),
+          use: isProd
+            ? [{ loader: MiniCssExtractPlugin.loader, options: { sourceMap: true } }, cssLoader, 'sass-loader']
+            : ['style-loader', cssLoader, 'sass-loader'],
         },
         {
           test: /\.css$/,
-          use: [
-            hotCssLoader,
-            miniCssLoader,
-            'css-loader',
-            postCssLoader,
-          ].filter(loader => loader != null),
+          use: isProd
+            ? [MiniCssExtractPlugin.loader, cssLoader]
+            : ['style-loader', cssLoader],
         },
       ],
     },
