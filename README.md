@@ -24,7 +24,6 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
 - Typescript configuration with
   - Source maps
   - `esnext` module syntax, e.g. `import { Foo } from 'bar'`
-  - Dynamic imports, e.g. `import(/* webpackChunkName: "foo" */ './foo').then(...)`
   - `strict`, `noImplicitAny`: catches many bugs/mistakes with stricter type checking
 
 - Tslint: Enforce good coding practices, as well as a uniform code style
@@ -66,9 +65,9 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
   - You can set a background and theme color, and make various customizations.
   - You can generate favicons in different sizes [here](https://realfavicongenerator.net/).
 
-## Add React
+## Examples for including frameworks
 
-If you want to use this template for React, that's pretty easy:
+### React
 
 1. Go to `.tsconfig` and add `"jsx": "react"` to the compilerOptions.
 2. Install some dependencies:
@@ -77,12 +76,41 @@ If you want to use this template for React, that's pretty easy:
    npm install --save-dev @types/react @types/react-dom react-hot-loader
    ```
 3. Rename `index.ts` to `index.tsx` and change the `entry` in `webpack.config.js` accordingly
-4. Insert the following at the end of `index.tsx`, to test it and enable hot reloading:
-   ```tsx
-   import * as React from 'react'
-   import * as ReactDOM from 'react-dom'
+4. Change `index.tsx` like this:
+   ```diff
+   - document.getElementById('app')!.textContent = 'Hello world!'
+   + import * as React from 'react'
+   + import * as ReactDOM from 'react-dom'
+   +
+   + ReactDOM.render(<div>Hello react!</div>, document.getElementById('app'))
+   ```
 
-   ReactDOM.render(<div>Hello react!</div>, document.body)
+### Bootstrap
 
-   if (module.hot) module.hot.accept()
+1. Add dependencies:
+   ```bash
+   npm install --save-dev @types/jquery @types/bootstrap
+   npm install --save jquery bootstrap
+   ```
+2. Import in `index.ts`:
+   ```ts
+   import 'bootstrap'
+   import $ from 'jquery'
+   ```
+3. Replace in `index.sass`:
+   ```diff
+   - @import "~normalize.css/normalize.css"
+   + @import "~bootstrap/dist/css/bootstrap.min.css"
+   ```
+
+### Lodash
+
+1. Add dependencies:
+   ```bash
+   npm install --save-dev @types/lodash
+   npm install --save lodash
+   ```
+2. Import in `index.ts`:
+   ```ts
+   import _ from 'lodash'
    ```

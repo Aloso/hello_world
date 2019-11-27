@@ -5,6 +5,7 @@
     "curly": false,
     "arrow-parens": false,
     "interface-name": false,
+    "no-consecutive-blank-lines": false,
     "prefer-readonly": true,
     "trailing-comma": [
       true,
