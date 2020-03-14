@@ -3,7 +3,7 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
 
 ## Highlights
 
-- Webpack 4, Typescript, TSLint, Sass
+- Webpack 4, Typescript, TSLint/ESLint, Sass
 - Polyfills ([core-js](https://github.com/zloirock/core-js), [regenerator-runtime](https://github.com/facebook/regenerator/tree/master/packages/regenerator-runtime)) and a CSS reset ([normalize.css](https://necolas.github.io/normalize.css/))
 - [Hot reloading](https://webpack.js.org/concepts/hot-module-replacement) of stylesheets and selected TypeScript modules
 - Source maps, css extraction
@@ -26,7 +26,7 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
   - `esnext` module syntax, e.g. `import { Foo } from 'bar'`
   - `strict`, `noImplicitAny`: catches many bugs/mistakes with stricter type checking
 
-- Tslint: Enforce good coding practices, as well as a uniform code style
+- TSLint/ESLint: Enforce good coding practices, as well as a uniform code style
   - Indent with spaces
   - No semicolons
   - Single quotes for strings
