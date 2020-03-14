@@ -13,7 +13,10 @@ module.exports = {
     },
     plugins: [
         '@typescript-eslint',
-        '@typescript-eslint/tslint'
+        '@typescript-eslint/tslint',
+        'prefer-arrow',
+        'import',
+        'jsdoc',
     ],
     rules: {
         '@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -144,7 +147,7 @@ module.exports = {
         'one-var': ['error', 'never'],
         'prefer-arrow/prefer-arrow-functions': 'error',
         'prefer-const': 'error',
-        'prefer-readonly': 'error',
+        '@typescript-eslint/prefer-readonly': 'error',
         'radix': 'error',
         'spaced-comment': 'error',
         'use-isnan': 'error',
