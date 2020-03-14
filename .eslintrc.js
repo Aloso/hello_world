@@ -153,30 +153,10 @@ module.exports = {
         'use-isnan': 'error',
         'valid-typeof': 'off',
         '@typescript-eslint/tslint/config': [
-            'error',
+            1,
             {
-                rules: {
-                    'import-blacklist': [true, 'rxjs/Rx'],
-                    'import-spacing': true,
-                    'jsdoc-format': true,
-                    'no-reference-import': true,
-                    'one-line': [
-                        true,
-                        'check-open-brace',
-                        'check-catch',
-                        'check-else',
-                        'check-whitespace'
-                    ],
-                    'whitespace': [
-                        true,
-                        'check-branch',
-                        'check-decl',
-                        'check-operator',
-                        'check-separator',
-                        'check-type'
-                    ]
-                }
-            }
+                lintFile: './tslint.json',
+            },
         ]
     }
 };
