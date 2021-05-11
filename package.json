@@ -6,14 +6,15 @@
     "hello_world"
   ],
   "author": "Ludwig Stecher <ludwig.stecher@gmx.de>",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "scripts": {
     "watch": "./node_modules/webpack/bin/webpack.js --mode development --watch",
+    "watch-prod": "./node_modules/webpack/bin/webpack.js --mode production --watch",
     "build": "./node_modules/webpack/bin/webpack.js --mode development",
+    "build-prod": "./node_modules/webpack/bin/webpack.js --mode production",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development",
-    "prod": "./node_modules/webpack/bin/webpack.js --mode production",
-    "serve": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode production"
+    "start-prod": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode production"
   },
   "dependencies": {
     "core-js": "^3.12.1",
